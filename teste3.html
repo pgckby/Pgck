@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais Marinhos</title>
+    <link rel="shortcut icon" href="favicon (2).ico" type="image/x-icon">
+    <style>
+        :root {
+            --background-color: rgba(30, 30, 30, 0.6);
+            --button-bg: rgba(255, 255, 255, 0.2);
+            --button-bg-hover: rgba(255, 255, 255, 0.4);
+            --text-color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-image: url('https://thumbs.dreamstime.com/z/mar-com-ondas-e-montanhas-no-horizonte-desenho-animado-vetorial-da-paisagem-natural-do-lago-rochas-de-%C3%A1gua-azul-aves-voadoras-241086769.jpg?ct=jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+        }
+
+        /* Animação de digitação */
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Estilo do texto que vai ser animado */
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid rgba(255, 255, 255, 0.75); /* O cursor piscando */
+            width: 0; /* Começa com o texto invisível */
+            animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        article {
+            background-color: var(--background-color);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        article h2 {
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        article p {
+            margin: 10px 0;
+            font-size: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .hidden {
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .read-more-btn {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background-color: var(--button-bg-hover);
+            transform: scale(1.05);
+        }
+
+        /* Responsividade */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            article {
+                padding: 15px;
+            }
+
+            .read-more-btn {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="typing">Animais Marinhos</h1>
+        <p class="typing">Explore a diversidade e a beleza dos seres que habitam os oceanos do nosso planeta.</p>
+    </header>
+
+    <!-- Tartarugas Marinhas -->
+    <article>
+        <h2>Tartarugas Marinhas</h2>
+        <p>A tartaruga marinha é um animal fascinante que percorre longas distâncias nos oceanos.</p>
+        <p class="hidden">Elas são conhecidas pela longevidade e pela migração épica. As tartarugas marinhas podem viajar milhares de quilômetros para chegar aos seus locais de desova.</p>
+        <button class="read-more-btn" onclick="toggleContent(this)">Ler mais</button>
+    </article>
+
+    <!-- Golfinhos -->
+    <article>
+        <h2>Golfinhos</h2>
+        <p>Os golfinhos são conhecidos pela sua inteligência e comportamento social.</p>
+        <p class="hidden">Eles se comunicam por sons e vivem em grupos complexos chamados cardumes. Golfinhos também demonstram empatia e capacidade de resolver problemas.</p>
+        <button class="read-more-btn" onclick="toggleContent(this)">Ler mais</button>
+    </article>
+
+    <!-- Baleias -->
+    <article>
+        <h2>Baleias</h2>
+        <p>As baleias são mamíferos marinhos gigantes que habitam os oceanos.</p>
+        <p class="hidden">Elas são conhecidas por suas migrações longas e pela comunicação através de sons profundos, conhecidos como cantos. As baleias também têm uma vida social muito interessante.</p>
+        <button class="read-more-btn" onclick="toggleContent(this)">Ler mais</button>
+    </article>
+
+    <!-- Peixes -->
+    <article>
+        <h2>Peixes</h2>
+        <p>Os peixes são uma das formas de vida mais antigas dos oceanos.</p>
+        <p class="hidden">Eles variam em tamanho, forma e cor. Alguns peixes têm adaptações especiais, como bioluminescência, para sobreviver nas profundezas do mar.</p>
+        <button class="read-more-btn" onclick="toggleContent(this)">Ler mais</button>
+    </article>
+
+    <!-- Medusas -->
+    <article>
+        <h2>Medusas</h2>
+        <p>As medusas são animais fascinantes com corpos translúcidos.</p>
+        <p class="hidden">Elas flutuam pelas águas oceânicas e são uma parte importante do ecossistema marinho. Algumas medusas têm tentáculos venenosos para capturar suas presas.</p>
+        <button class="read-more-btn" onclick="toggleContent(this)">Ler mais</button>
+    </article>
+
+    <script>
+        function toggleContent(button) {
+            const hiddenContent = button.previousElementSibling;
+
+            if (hiddenContent.style.display === 'block') {
+                hiddenContent.style.display = 'none';
+                button.textContent = 'Ler mais';
+            } else {
+                hiddenContent.style.display = 'block';
+                button.textContent = 'Ler menos';
+            }
+        }
+    </script>
+</body>
+</html>
